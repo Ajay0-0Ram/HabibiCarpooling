@@ -1,0 +1,572 @@
+
+body{
+    background-image: url(backgroundImage.jpg); 
+    background-size: contain; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-color: #c47638; 
+    font-family: "Sour Gummy", sans-serif ;
+    overflow:hidden;
+     
+}
+
+/*changes the background to blurry*/
+.blurredBackground::before {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(backgroundImage.jpg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #c47638;
+    filter: blur(10px);
+     z-index: -1; /*pushes background back */
+    
+}
+
+/* pushes all text/content forward for visibility*/ 
+.blurredBackground * {
+    position: relative;
+    z-index: 1;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 34vh;
+}
+
+#welcomeMsg h3{
+    margin-top: 32.5vh;
+    text-align: center;
+    color: #021258;
+}
+
+#login{
+    text-align:center;
+    margin-top: 5vh;
+    
+    
+
+}
+#callToAction{
+    text-align:center;
+
+}
+
+/*login, logout buttons styles*/
+#loginButton,#signupButton,#logoutButton{
+    font-family: "Sour Gummy", sans-serif;
+    font-weight:bold;
+    border-radius: 20px;
+    font-size: 1.2em;
+    color:#1fb4c1;
+    border-color:#1fb4c1 ;
+    box-shadow: inset;
+    background-color: #e8ebc5 !important;
+    padding: 10px 2vw;
+    opacity:0; 
+    animation: fadeIn 2s ease-out forwards;
+    
+    
+}
+
+/*login, logout buttons hover properties*/
+
+#loginButton:hover,#signupButton:hover,#logoutButton:hover{
+    background-color:#1fb4c1 !important;
+    color:#e8ebc5;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    transition: 0.5s;
+}
+
+#callToAction {
+    margin-left:10%;
+    margin: 40vh auto;
+    width: 80%;
+    margin-top:31vh ;
+    line-height: 0.40em;
+    font-weight: bold;
+    color:#2f586a;
+
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------- Additional login.php css could not link with same ids/classes -----------------------------*/
+
+#text{
+    font-family: "Sour Gummy", sans-serif;
+    font-weight:bold;
+    border-radius: 10px;
+    font-size:1.1em;
+    color:#3a555f;
+    border-color:#1fb4c1 ;
+    box-shadow: inset;
+    background-color: #BDC0A1 !important;
+    padding-top: 10px;
+    padding-bottom:10px;
+    width:40%;
+    
+}
+
+#loginForm legend, #signupForm legend{
+    font-family: "Sour Gummy", sans-serif;
+    font-size:1.3em;
+    font-weight:bold;
+    color: #021258;
+    padding-bottom:2%;
+
+
+}
+
+#login form, #loginForm fieldset{
+    margin-top: 32.5vh;
+    text-align: center;
+    color: #021258;
+    
+}
+
+#loginForm fieldset,#signupForm fieldset{
+    border:2px solid;
+    border-color: #1fb4c1;
+    background-color: #e8ebc5;
+    border-radius: 30px;
+    width:40%;
+    margin:0 auto;
+    box-shadow: 0 4px 50px #1fb4c1;
+    opacity:0; 
+    animation: fadeIn 1s ease-out forwards;
+
+}
+
+#login a{
+    color:#3a7577;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------- Additional profile.php css could not link with same ids/classes -----------------------------*/
+
+#profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    margin-top:31vh;
+}
+
+#profile h1 {
+    margin: 0;
+    color:#021258;
+    font-style: italic;
+}
+
+/* Container for the 4 profilechild divs */
+.profile-children-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px; 
+    animation: fadeIn 1s ease-out forwards;
+
+}
+
+/* Individual Divs Styling */
+.profilechild {
+    flex: 1 1 200px; 
+    border: 3.5px solid #1fb4c1;
+    padding: 20px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    min-width: 200px; /* each div won’t shrink below 200px */
+    text-align: center;
+    background-color: #e8ebc5;
+    height:40vh;
+}
+
+.profilechild h2{
+    color:#196c90;
+    margin-top:0.5%;
+    text-decoration: underline;
+
+}
+
+/*lowering logout button*/
+#logoutButton {
+    margin-top:20px;
+    align-content: center;
+}
+
+
+/*submit button styled */
+#submitButton{
+    margin-top:5%;
+    font-family: "Sour Gummy", sans-serif;
+    font-weight:bold;
+    border-radius: 20px;
+    font-size: 1em;
+    color:#e8ebc5;
+    border-color:#e8ebc5 ;
+    box-shadow: inset;
+    background-color: #1fb4c1 !important;
+    padding: 5px 2vw;
+    
+    
+}
+
+/*submit button hoveer properties */
+#submitButton:hover{
+    background-color:#e8ebc5 !important;
+    color:#1fb4c1;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    transition:0.5s;
+}
+
+/*destination search bar*/
+#searchText{
+    font-family: "Sour Gummy", sans-serif;
+    font-weight:bold;
+    border-radius: 10px;
+    font-size:0.9em;
+    color:#3a555f;
+    border-color:#1fb4c1 ;
+    box-shadow: inset;
+    background-color: #BDC0A1 !important;
+    padding-top: 10px;
+    padding-bottom:10px;
+    width:100%;
+}
+
+/* text color for 'rides taken' and 'rides posted'  */
+#taken p,#display p{
+    font-weight:bold;
+    color:#8b3936;
+}
+#taken a,#display a{
+    color:#54a3a9;
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/* ------------------------- Additional signup.php css could not link with same ids/classes -----------------------------*/
+
+/*Changed colors for number,email input*/
+#text2{
+    font-family: "Sour Gummy", sans-serif;
+    font-weight:bold;
+    border-radius: 10px;
+    font-size:1.1em;
+    color:#021258;
+    border-color:#021258 ;
+    box-shadow: inset;
+    background-color: #BDC0A1 !important;
+    padding-top: 10px;
+    padding-bottom:10px;
+    width:40%;
+    transition: background-color 0.3s ease;
+    
+}
+
+/*positioning of signup button*/
+#signup form,#signupForm fieldset{
+    margin-top: 27.5vh;
+    text-align: center;
+    color: #021258;
+    
+}
+#loginMsg{
+    text-align: center;
+}
+.errorMsg{
+    color: red;
+    text-align: center; 
+}
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------- Additional searchRide.php css ------------------------------------------------ */
+
+.rides-container {
+    margin: 25vh auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation:fadeIn 1s;
+}
+
+.rides-container h1 {
+    font-family: "Sour Gummy", sans-serif;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #021258;
+}
+
+.rides-table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px #000000;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.rides-table th, .rides-table td {
+    padding: 12px;
+    text-align: left;
+    font-family: "Sour Gummy", sans-serif;
+}
+
+.rides-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    font-family: "Sour Gummy", sans-serif;
+}
+
+.rides-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.rides-table tr:hover {
+    background-color: #ddd;
+}
+
+.join-ride-btn,
+.back-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.join-ride-btn:hover,
+.back-button:hover {
+    background-color: #45a049;
+}
+
+
+.ride-full {
+    color: #c22d28;
+    font-weight: bold;
+}
+
+.back-button {
+    margin: 20vh auto;
+    background-color: #837e7e; 
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.back-button:hover {
+    background-color: #333;
+}
+
+
+
+
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------- Additional postRide.php css ------------------------------------------------ */
+#postRideForm {
+    width: 60%;
+    max-width: 500px;
+    margin: 28vh auto 5vh auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s;
+}
+
+#postRideForm fieldset {
+    border: none;
+}
+
+#postRideForm legend {
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #021258;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#postRideForm label {
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 1.1em;
+    color: #2f586a;
+    margin-bottom: 5px;
+    display: block;
+}
+
+#postRideForm input[type="text"],
+#postRideForm input[type="datetime-local"],
+#postRideForm input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 1em;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+#postRideForm input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-family: "Sour Gummy", sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #e8ebc5;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#postRideForm input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+button.back-button {
+    display: block;
+    margin: -4vh auto;
+    padding: 10px 20px;
+    background-color: #837e7e;
+    color: white;
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.back-button:hover {
+    background-color: #333;
+}
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/*---------------------------------------- Additional rideInfo.php css ------------------------------------------------ */
+#rideInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 12vh;
+}
+#rideInfo h1 {
+    color: #021258;
+}
+
+/* Ride Info Container */
+.ride-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: fadeIn 1s ease-out forwards;
+    border: 2px solid #178b96;
+    border-radius: 10px;
+    background-color: #f7f3f3;
+    box-shadow: 0 4px 50px #1fb4c1;
+}
+
+/* Ride Info Sections (1 and 2) */
+.ride-info1, .ride-info2 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Reduced gap to create more spacing */
+    width: 100%;
+    max-width: 550px;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+/* Section Headers (h3) */
+.ride-info1 h3, .ride-info2 h3 {
+    flex-basis: 100%;
+    font-size: 20px;
+    color: #007bff;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+/* Paragraph Styling */
+.ride-info1 p, .ride-info2 p {
+    flex-basis: 100%; /* Ensures text inside wraps properly */
+    margin: 5px 0;
+    font-size: 16px;
+    line-height: 1.5; /* Makes text more readable */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Query for Larger Screens */
+@media (min-width: 768px) {
+    .ride-info-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .ride-info1, .ride-info2 {
+        width: 48%; /* Adjusts to 48% to maintain space */
+    }
+}
+
+/* Delete Button Styling */
+button.delete-button {
+    display: block;
+    margin: 20px auto; /* Adjust margin for better placement */
+    padding: 10px 20px;
+    background-color: #8d4646;
+    color: white;
+    font-family: "Sour Gummy", sans-serif;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.delete-button:hover {
+    background-color: #c83939;
+}
